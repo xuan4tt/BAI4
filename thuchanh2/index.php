@@ -9,10 +9,12 @@ $questions = new QuestionsList();
 $file = $questions->parse('questions.md');
 $all = $questions->all($file, '######');
 
-// $search = "Which one is true?";
-// array_filter($array, function($all) use ($search) {
-//     return ( strpos($all, $search) !== false );
-// });
+if(isset($_GET['search']) && $_GET['search'] ==! "" ){
+    $keyword = $_GET['search'];
+    var_dump($keyword);
+    $all = $questions->fuzzySearch($all, $keyword);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +25,17 @@ $all = $questions->all($file, '######');
     <title>Document</title>
 </head>
 <body>
-    <?php foreach($all as $item){?>
-        <?php echo $item ?> <br><br>
-    <?php }?>
+    <h1>Tìm kiếm</h1>
+    <form method ="GET">
+        <input type= "text" name="search"/>
+        <button type = "submit">Tìm</button>
+    </form>
+    <div>
+        <p>
+            <?php foreach($all as $item){?>
+                <b>Câu hỏi:</b><?php echo $item ?> <hr>
+            <?php }?>
+        </p>
+    </div>
 </body>
 </html>
