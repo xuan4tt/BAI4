@@ -16,8 +16,8 @@ class QuestionsList {
         $result_array = [];
             foreach($array_questions as $value){
                 // var_dump(stristr($value, $keyword));die;
-                if(stristr($value," " . $keyword . " ")){
-                    array_push($result_array, $value);
+                if(strpos($value, $keyword)!== false){
+                    $result_array[] = $value;
                 }
             }
         return $result_array;

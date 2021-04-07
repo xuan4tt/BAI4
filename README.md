@@ -1,1 +1,3 @@
 # BAI4
+- BÀI THỰC HÀNH 1: hoàn thành bài 1,2,4,5 nhưng vẫn phải xem hướng dẫn. Kiến thức thu thập được: magic method, use const true as false, tham chiếu &$, áp dụng được magic method như __toString, __destruct. Khó khăn: 3,6,7 áp dụng theo hướng dẫn không ra, chưa hiểu hướng dẫn.
+- BÀI THỰC HÀNH 2: Tạo class QuestionsList, parse được file markdown ra, lấy được danh sách câu hỏi ở dạng mảng. Kiến thức thu thập được: oop, sử dụng spl_autoload_register thay vì require thủ công. Khó khăn: trong class QuestionList chưa tìm ra giải pháp dùng fuzzySearch để tìm kiếm trong mảng câu hỏi lấy ra. Class Questions chưa hiểu rõ, lấy ra từng câu hỏi như nào, output ra như nào,
