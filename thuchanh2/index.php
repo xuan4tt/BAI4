@@ -9,6 +9,11 @@ $questions = new QuestionsList();
 $file = $questions->parse('questions.md');
 $all = $questions->all($file, '######');
 
+if(isset($_GET['search'])){
+    $keyword = $_GET['search'];
+    var_dump($keyword);
+    $all = $questions->fuzzySearch($all, $keyword);
+}
 // $search = "Which one is true?";
 // array_filter($array, function($all) use ($search) {
 //     return ( strpos($all, $search) !== false );
