@@ -10,6 +10,7 @@ $file = $questions->parse('questions.md');
 $all = $questions->all($file, '######');
 
 if(isset($_GET['search']) && $_GET['search'] ==! "" ){
+    $all = $questions->all($file, '######');
     $keyword = $_GET['search'];
     var_dump($keyword);
     $all = $questions->fuzzySearch($all, $keyword);
